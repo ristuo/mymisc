@@ -1,0 +1,7 @@
+Package: mymisc
+Title: Various R utility functions
+Version: 0.1
+Description: Currently supports file system functions.
+Depends:
+    R
+RoxygenNote: 5.0.1
