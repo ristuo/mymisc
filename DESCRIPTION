@@ -3,5 +3,4 @@ Title: Various R utility functions
 Version: 0.1
 Description: Currently has a function for finding newest file in a folder.
 Depends:
-    R
 RoxygenNote: 5.0.1

@@ -4,6 +4,7 @@
 #' @param folderpath a character vector of folder names
 #' @param ... Parameters passed to list.files
 #' @return A character vector
+#' @export
 newest_file <- function(folderpath, ...) {
     if (!dir.exists(folderpath)) {
         msg <- paste0("Folder ", folderpath, " does not exist")
@@ -13,7 +14,8 @@ newest_file <- function(folderpath, ...) {
         msg <- paste0("Folder ", folderpath, " contains no files")
         stop(msg)
     }
-    args <- c(folderpath, list(...))
+    fnames <- c(full.names = TRUE)
+    args <- as.list(c(folderpath, fnames, list(...)))
     files <- do.call(list.files, args)
     files[ which.max(file.info(files)$mtime) ]
 }
